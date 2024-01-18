@@ -11,10 +11,30 @@ const setupInput = function () {
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
+
+  const handleUserInput = function (key) { //user input
+    if (key === "\u0003") { //key ctrl + c to log out
+      process.exit();
+    }
+
+    /*if(key === "w") { // wsad move up
+      conn.write("Move: up");
+    }
+
+    if(key === "s") { // wsad move up
+      conn.write("Move: down");
+    }
+    
+    if(key === "a") { // wsad move up
+      conn.write("Move: left");
+    }
+
+    if(key === "r") { // wsad move up
+      conn.write("Move: right");
+    }
+  };*/
+
   stdin.on("data", handleUserInput);
   return stdin;
 };
-
-const handleUserInput = function () {
-  // your code here
-};
+}
