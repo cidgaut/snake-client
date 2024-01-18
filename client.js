@@ -16,9 +16,9 @@ const connect = function () {
     conn.write("Name: CID");//still witthin the conn.on function. Won't work outside.
     
     //make the snake move up once every 50 ms
-    setInterval(() => {
+    /*setInterval(() => {
       conn.write("Move: up");
-    }, 50);
+    }, 50);*/
 
   });
 
