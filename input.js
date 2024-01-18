@@ -32,4 +32,5 @@ const setupInput = function () {
 
 setupInput();
 
-module.exports = { setupInput, handleUserInput } //exporting both functions
+module.exports = { setupInput, handleUserInput } //exporting both functions 
+//handleUserInput doesn't actually need to be exported as it is called within setUpInput in the same file.
