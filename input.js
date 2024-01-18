@@ -32,6 +32,18 @@ function handleUserInput(key) { //user input
   if (key === "d") { // wsad move right
     connection.write("Move: right");
   }
+
+  if (key === "h") { // h key hello
+    connection.write("Say: hello");
+  }
+
+  if (key === "m") { // m key for move
+    connection.write("Say: move");
+  }
+
+  if (key === "") { // m key for move
+    connection.write("Say: NOOOO");
+  }
 };
 
 module.exports = { setupInput }; //exporting both functions 
