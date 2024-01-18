@@ -3,6 +3,9 @@ const connectKey = require("./client"); //we assign a variable to the file we re
 const { setupInput } = require("./input"); //another way to require a exported "object"
 //
 console.log("Connecting ...");
-connectKey.connect(); //this is where we take the  => file we require via value => dot => name of the object/key exported from said file
+const connection = connectKey.connect(); //this is where we take the  => file we require via value => dot => name of the object/key exported from said file
+//connection();
+setupInput(connection); //another way to call the function
 
-setupInput(); //another way to call the function
+
+//issues, we didnt send the connection to input
