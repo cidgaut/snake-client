@@ -13,7 +13,13 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Successfully connected to game server"); //changed previous message
   
-    conn.write("Name: CID"); //still witthin the conn.on function. Won't work outside.
+    conn.write("Name: CID");//still witthin the conn.on function. Won't work outside.
+    
+    //make the snake move up once every 50 ms
+    setInterval(() => {
+      conn.write("Move: up");
+    }, 50);
+
   });
 
   
