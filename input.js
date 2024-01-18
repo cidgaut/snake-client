@@ -1,4 +1,7 @@
-const setupInput = function () {
+let connection; //undefined
+
+const setupInput = (conn) => {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -12,25 +15,22 @@ const setupInput = function () {
       process.exit();
     }
 
-    /*if(key === "w") { // wsad move up
-      conn.write("Move: up");
+    if(key === "w") { // wsad move up
+      connection.write("Move: up"); //updated to connection.write 
     }
 
-    if(key === "s") { // wsad move up
-      conn.write("Move: down");
+    if(key === "s") { // wsad move down
+      connection.write("Move: down");
     }
     
-    if(key === "a") { // wsad move up
-      conn.write("Move: left");
+    if(key === "a") { // wsad move left
+      connection.write("Move: left");
     }
 
-    if(key === "r") { // wsad move up
-      conn.write("Move: right");
+    if(key === "d") { // wsad move right
+      connection.write("Move: right");
     }
-  };*/
 };
 
-setupInput();
-
-module.exports = { setupInput, handleUserInput } //exporting both functions 
+module.exports = { setupInput } //exporting both functions 
 //handleUserInput doesn't actually need to be exported as it is called within setUpInput in the same file.
