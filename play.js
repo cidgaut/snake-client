@@ -1,21 +1,9 @@
-const net = require("net");
 
-// establishes a connection with the game server
-const connect = function () {
-  const conn = net.createConnection({
-    host: "165.227.47.243",
-    port: 50541
-  });
+const connectKey = require("./client"); //we assign a variable to the file we require to then request the object using a key
 
-  // interpret incoming data as text
-  conn.setEncoding("utf8");
-
-  conn.on("connect", () => {
-    console.log("you ded cuz you idled");
-  });
-
-  return conn;
-};
-
+//
 console.log("Connecting ...");
-connect();
+connectKey.connect(); //this is where we take the  => file we require via value => dot => name of the object/key exported from said file
+
+
+//
